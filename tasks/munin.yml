@@ -1,0 +1,10 @@
+---
+
+
+- name: Add cird allow in munin-node.conf
+  lineinfile:
+    dest=/etc/munin/munin-node.conf
+    line="cidr_allow 172.16.0.0/12"
+    insertafter="# cidr_deny  192.0.2.42/32"
+  notify: munin-node restart
+
