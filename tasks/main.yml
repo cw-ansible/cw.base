@@ -63,3 +63,14 @@
     - { name: update-manager-core, state: absent }
     - { name: update-notifier-common, state: absent }
 
+
+- name: install base extra packages
+  apt:
+    pkg: "{{ item.name }}"
+    state: '{{item.state|default("installed")}}'
+    purge: '{{item.purge|default(true)}}'
+    install_recommends: no
+    cache_valid_time: 3600
+  with_items:
+    base_extra_packages
+  when: base_extra_packages is defined
