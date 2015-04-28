@@ -8,61 +8,8 @@
     install_recommends: no
     cache_valid_time: 3600
   with_items:
-    #- chkconfig
-    #- ferm
-    #- heirloom-mailx
-    #- lldpd
-    #- lvm2
-    #- multitail
-    #- munin-node
-    #- nethogs
-    #- ocsinventory-agent
-    #- snmpd
-    #- supervisor
-    #- tmux
-    #- tree
-    #- tsocks
-    #- vlan
-    - { name: bc }
-    - { name: bind9-host }
-    - { name: binutils }
-    - { name: ca-certificates }
-    - { name: curl }
-    - { name: dmidecode }
-    - { name: dnsutils }
-    - { name: dstat }
-    - { name: ethtool }
-    - { name: htop }
-    - { name: iftop }
-    - { name: iotop }
-    - { name: iperf }
-    - { name: less }
-    - { name: lshw }
-    - { name: lsof }
-    - { name: man-db }
-    - { name: mtr-tiny }
-    - { name: nano-tiny }
-    - { name: netcat-traditional }
-    - { name: psmisc }
-    - { name: rsync }
-    - { name: screen }
-    - { name: strace }
-    - { name: sysstat }
-    - { name: tcpdump }
-    - { name: telnet }
-    - { name: traceroute }
-    - { name: vim }
-    - { name: wget }
-    - { name: whoopsie, state: absent }
-    - { name: landscape-common, state: absent }
-    - { name: laptop-detect, state: absent }
-    - { name: os-prober, state: absent }
-    - { name: popularity-contest, state: absent }
-    - { name: ppp, state: absent }
-    - { name: ufw, state: absent }
-    - { name: update-manager-core, state: absent }
-    - { name: update-notifier-common, state: absent }
-
+    base_packages
+  when: base_packages is defined
 
 - name: install base extra packages
   apt:

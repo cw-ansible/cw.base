@@ -1,0 +1,13 @@
+---
+
+# Base extra package to install
+#
+# This is a list of dictionaries of extra packages to install (or remove)
+# using the apt module. For each items following fields are recognized:
+#
+#   - name
+#   - state
+#   - purge
+#
+# See pkg module for file description.
+#base_extra_packages:
