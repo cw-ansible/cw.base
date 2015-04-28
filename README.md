@@ -21,7 +21,7 @@ playbook.
 
 ## Configuration
 
-Nothing for the moment.
+See specific documentation in `defaults/main.yml`.
 
 ## Copyright
 
